@@ -1,4 +1,5 @@
 <template>
+<main class="main-body">
   <div class="center-div">
             <p>Cadastre uma avaliação</p>
             <br/>
@@ -40,6 +41,7 @@
                 </div>
             </form>
         </div>
+</main>
 </template>
 
 <script>
@@ -48,6 +50,77 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+body{
+    background-image: url("https://i.pinimg.com/736x/e5/e5/6d/e5e56d198ea8e8e906cd7240ccdabf7d.jpg");
+}
 
+.main-body{
+    width: 70%;
+    height: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.main-body .center-div{
+    background-color: #F7F7F7;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-top: 15%;
+    text-align: center;
+    /*border: 1px solid rgba(158, 34, 158, 0.6);*/
+}
+
+.main-body .center-div p{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.main-body .center-div span{
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.main-body .center-div .form-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-body .center-div .form-div select{
+    width: 52%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 2%;
+}
+
+.main-body .center-div .form-div input{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 2%;
+}
+
+.main-body .center-div .form-div label{
+    font-weight: 500;
+    /*color: rgb(148, 26, 148)*/
+}
+
+.main-body .center-div .button-div button{
+    margin-bottom: 2%;
+    background-color: #05be59;
+    color: #fff;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.main-body .center-div .button-div button:hover{
+    background-color: #049c48;
+    color: #fff;
+    cursor: pointer;
+}
 </style>

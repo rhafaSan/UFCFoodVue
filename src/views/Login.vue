@@ -1,4 +1,5 @@
 <template>
+<main class="main-body">
   <div class="center-div">
             <p>Bem vindo (a) ao UFC Food</p>
             <form action="" name="login_form">
@@ -16,9 +17,10 @@
                 </div>
             </form>
         </div>
+     </main>
 </template>
 
-<script>
+<script scoped>
 export default {
   name: 'Login',
   methods: {
@@ -31,7 +33,87 @@ export default {
   }
 }
 </script>
+<style>
+.main-body{
+    background-color: #9871F5;
+    height: 100%;
+    padding-top: 10%;
+    background-image: url("https://i.pinimg.com/736x/e5/e5/6d/e5e56d198ea8e8e906cd7240ccdabf7d.jpg");
+}
+.center-div{
+    background-color: #F7F7F7;
+    border: 1px solid rgba(117, 112, 112, 0.39); 
+    border-radius: 10px;
+    width: 70%;
+    height: 40vh;
+    margin-top: 10%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 2%;
+    color: #333;
+}
 
-<style scoped>
+.center-div p{
+    text-align: center;
+    font-weight: 600;
+    font-size: 27px;
+}
 
+.center-div .form-div{
+    /* border: 1px solid #000; */
+    /* background-color: #EDF2F4; */
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-div .form-div input{
+    width: 90%;
+    height: 20px;
+}
+
+.center-div .form-div input, label{
+    margin-left: 3% ;
+}
+
+.center-div .button-div{
+    /* border: 1px solid #000; */
+    margin-top: 1%;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.button-div .login-btn {
+    background-color: #04D361;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.button-div .login-btn:hover{
+    background-color: #04BF58;
+    cursor: pointer;
+}
+
+.button-div .register-btn{
+    background-color: #d1e751;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.button-div .register-btn:hover{
+    background-color: #a6b64e;
+    color: #f7f7f7;
+    cursor: pointer;
+}
 </style>

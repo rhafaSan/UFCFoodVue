@@ -1,4 +1,5 @@
 <template>
+<main class="main-body">
   <div class="center-div">
             <p>Bem vindo (a) ao UFC Food</p>
             <span>Cadastre-se gratuitamente</span>
@@ -26,6 +27,7 @@
                 </div>
             </form>
         </div>
+    </main>
 </template>
 
 <script>
@@ -39,6 +41,100 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.main-body{
+    background-color: #9871F5;
+    height: 100vh;
+    padding-top: 10%;
+    background-image: url("https://i.pinimg.com/736x/e5/e5/6d/e5e56d198ea8e8e906cd7240ccdabf7d.jpg");
 
+}
+
+.center-div{
+    
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    width: 70%;
+    height: 55vh;
+    margin-top: 10%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 2%;
+    color: #333;
+}
+
+.center-div p{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.center-div span{
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.center-div .form-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.center-div .form-div input{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 2%;
+}
+
+.center-div .form-div label{
+    font-weight: 500;
+    color: #32264D;
+}
+
+.center-div .button-div button{
+    margin-bottom: 2%;
+    background-color: #04D361;
+    color: #fff;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.center-div .button-div button:hover{
+    background-color: #05be59;
+    color: #fff;
+    cursor: pointer;
+}
+
+ .input-div input{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.input-div{
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.form-div .show-btn{
+    width: 10%;
+    height: 40px;
+    background-color: #d1e751;
+    color: #fff;
+    border: none;
+    margin-right: auto;
+    margin-left: 80%;
+    margin-top: -6%;
+    transition: background-color 0.2s;
+}
+
+.form-div .show-btn:hover{
+    background-color: #a6b64e;
+    color: #fff;
+    cursor: pointer;
+}
 </style>
