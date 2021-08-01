@@ -1,6 +1,6 @@
 <template>
 <div>
-  <button @click="{ action }">{{ placeholder }}</button>
+  <button type="{{ btnType }}">{{ placeholder }}</button>
 </div>
 </template>
 
@@ -12,11 +12,12 @@ export default {
       type: String,
       required: true
     },
-    action: {
-      type: MouseEvent,
-      required: true,
+    btnType: {
+      type: String,
+      required: true
     }
-  }
+  },
+  // emits: ['action']
 }
 </script>
 
