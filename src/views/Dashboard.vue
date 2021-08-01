@@ -99,11 +99,13 @@
 
 <script>
 const hamb = require('../assets/hamburguer-de-lentilha.jpg')
+
 export default {
   name: 'Dashboard',
   data(){
       return{
-          img: hamb
+          img: hamb,
+          
       }
   }
 }
@@ -117,7 +119,7 @@ export default {
         }
 
         .nav-header {
-            background-color: #cf5799;
+            background-color: #0da3e93b;
             height: 7%;
         }
 
@@ -186,7 +188,7 @@ export default {
         }
 
         footer {
-            background-color: #cf5799;
+            background-color: #0da3e93b;
             height: 5%;
         }
 

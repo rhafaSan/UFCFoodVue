@@ -62,9 +62,6 @@ export default {
 </script>
 
 <style scoped>
-body{
-    background-image: url("https://i.pinimg.com/736x/e5/e5/6d/e5e56d198ea8e8e906cd7240ccdabf7d.jpg");
-}
 
 .main-body{
     width: 70%;

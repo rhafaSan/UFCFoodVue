@@ -31,6 +31,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Register',
   methods: {
@@ -43,11 +44,9 @@ export default {
 
 <style scoped>
 .main-body{
-    background-color: #9871F5;
+    background-color: #0da3e93b;
     height: 100vh;
     padding-top: 10%;
-    background-image: url("../assets/login.jpg");
-
 }
 
 .center-div{
@@ -59,7 +58,7 @@ export default {
     border-radius: 10px;
     width: 70%;
     height: 55vh;
-    margin-top: 10%;
+    margin-top: 1%;
     margin-right: auto;
     margin-left: auto;
     padding: 2%;

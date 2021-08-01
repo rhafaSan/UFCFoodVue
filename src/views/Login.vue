@@ -36,10 +36,10 @@ export default {
 <style scoped>
 
 .main-body{
-    background-color: #9871F5;
+    background-color: #0da3e93b;
     height: 100vh;
     padding-top: 10%;
-    background-image: url("../assets/login.jpg");
+    
 }
 .center-div{
     background-color: #F7F7F7;
@@ -47,7 +47,7 @@ export default {
     border-radius: 10px;
     width: 70%;
     height: 40vh;
-    margin-top: 10%;
+    margin-top: 1%;
     margin-right: auto;
     margin-left: auto;
     padding: 2%;
