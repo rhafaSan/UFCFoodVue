@@ -31,7 +31,7 @@
                    <div class="card-container">
                        
                     <div class="card">
-                        <img class="ilustrator-food" :src="'@/assets/cardápio/hamburguer-de-lentilha.jpg'" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>Opção vegetariana</b></h4>
                             <p>hamburguer-de-lentilha</p>
@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="ilustrator-food" :src="'@/assets/cardápio/Frango Empanado.jpg'" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>Opção Onívoro</b></h4>
                             <p>Frango a passarinho</p>
@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="ilustrator-food" :src="'@/assets/cardápio/carne vermelha.jpg'" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>Opção Onívoro</b></h4>
                             <p>Picadinho de carne</p>
@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="ilustrator-food" @src="'@/assets/cardápio/Arroz.jpg'" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>Acompanhamento</b></h4>
                             <p>Arroz branco</p>
@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="ilustrator-food" :src="'@/assets/cardápio/Feijao.jpg'" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>Acompanhamento</b></h4>
                             <p>Feijão mulatinho</p>
@@ -71,7 +71,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="ilustrator-food" :src="'@/assets/cardápio/salada.jpg'" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>salada</b></h4>
                             <p>Salada crua</p>
@@ -79,7 +79,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="ilustrator-food" :src="'@/assets/cardápio/fruta.jpg'" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>Fruta</b></h4>
                             <p>Banana</p>
@@ -98,10 +98,13 @@
 </template>
 
 <script>
+const hamb = require('../assets/hamburguer-de-lentilha.jpg')
 export default {
   name: 'Dashboard',
-  method: {
-    
+  data(){
+      return{
+          img: hamb
+      }
   }
 }
 </script>
