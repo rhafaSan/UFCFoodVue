@@ -69,6 +69,7 @@ export default {
     margin-right: auto;
     margin-left: auto;
     margin-top: 10px;
+    background-color: #049c48;
 }
 
 .main-body .center-div{

@@ -22,8 +22,8 @@
 
                 </div>
                 <div class="button-div">
-                    <button type="submit" class="login-btn" @click="watchRegister">Finalizar cadastro</button>
-                    
+                   <!-- <button type="submit" class="login-btn" @click="watchRegister">Finalizar cadastro</button -->
+                    <SecundaryButton placeholder="Finalizar cadastro" type="submit" />
                 </div>
             </form>
         </div>
@@ -31,12 +31,16 @@
 </template>
 
 <script>
+import SecundaryButton from '@/components/SecundaryButton.vue';
 
 export default {
   name: 'Register',
+  components:{
+      SecundaryButton
+  },
   methods: {
     watchRegister(){
-      this.$router.push('/');
+      this.$router.push('/login');
     }
   }
 }
