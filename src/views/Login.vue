@@ -33,12 +33,13 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
+
 .main-body{
     background-color: #9871F5;
-    height: 100%;
+    height: 100vh;
     padding-top: 10%;
-    background-image: url("https://i.pinimg.com/736x/e5/e5/6d/e5e56d198ea8e8e906cd7240ccdabf7d.jpg");
+    background-image: url("../assets/login.jpg");
 }
 .center-div{
     background-color: #F7F7F7;

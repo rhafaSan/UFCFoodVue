@@ -3,7 +3,7 @@
   <div class="center-div">
             <p>Cadastre uma avaliação</p>
             <br/>
-            <form action="" name="rating_form">
+            <form action="" name="rating_form" @submit="goToDashboard">
                 <div class="form-div">
                     <label for="evaluation_type">Tipo de avaliação:</label>
                     <select name="evaluation_type" id="evaluation_type" required>
@@ -37,7 +37,8 @@
                     <input type="date" name="valuation date" id="valuation date" required>
                 </div>
                 <div class="button-div">
-                    <button type="submit" class="rating-btn" onclick="">Finalizar cadastro de avaliação</button>
+                    <!-- <button type="submit" class="rating-btn" onclick="">Finalizar cadastro de avaliação</button> -->
+                    <PrimaryButton placeholder="Avaliar" type="submit" />
                 </div>
             </form>
         </div>
@@ -45,8 +46,18 @@
 </template>
 
 <script>
+import PrimaryButton from '@/components/PrimaryButton.vue';
+
 export default {
-  name: 'Rating'
+  name: 'Rating',
+  components:{
+      PrimaryButton
+  },
+  methods: {
+      goToDashboard(){
+          this.$router.push('/dashboard')
+      }
+  }
 }
 </script>
 
