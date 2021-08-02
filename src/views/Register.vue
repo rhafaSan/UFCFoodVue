@@ -10,19 +10,19 @@
 
                     <label for="password">Senha:</label>
                     <div class="input-div">
-                        <input type="password" name="password" id="password" minlength="6" maxlength="12" required> 
-                        <button class="show-btn" onclick="showPassword()" type="button" >Mostrar senha</button>
+                        <input :type="pswd" name="password" id="password" minlength="6" maxlength="12" required> 
+                        <button class="show-btn" @click="showPassword" type="button" >Mostrar senha</button>
                     </div>
                     
                     <label for="password">Confirme a senha:</label>
                     <div class="input-div">
-                        <input type="password" name="confirm_password" id="confirm_password" minlength="6" maxlength="12" required>
-                        <button class="show-btn" onclick="showConfirmePassword()" type="button" >Mostrar senha</button>
+                        <input :type="confirmPswd" name="confirm_password" id="confirm_password" minlength="6" maxlength="12" required>
+                        <button class="show-btn" @click="showConfirmePassword" type="button" >Mostrar senha</button>
                     </div>
 
                 </div>
                 <div class="button-div">
-                   <!-- <button type="submit" class="login-btn" @click="watchRegister">Finalizar cadastro</button -->
+                   <button type="submit" class="login-btn" @click="watchRegister">Finalizar cadastro</button>
                     <SecundaryButton placeholder="Finalizar cadastro" type="submit" />
                 </div>
             </form>
@@ -35,13 +35,26 @@ import SecundaryButton from '@/components/SecundaryButton.vue';
 
 export default {
   name: 'Register',
+  data(){
+      return{
+          pswd: 'password',
+          confirmPswd :'password'
+      }
+  },
   components:{
       SecundaryButton
   },
   methods: {
     watchRegister(){
       this.$router.push('/login');
+    },
+    showPassword(){
+        this.pswd == 'password' ? this.pswd = 'text' : this.pswd = 'password'
+    },
+    showConfirmePassword(){
+        this.confirmPswd == 'password' ? this.confirmPswd = 'text' : this.confirmPswd = 'password'
     }
+
   }
 }
 </script>

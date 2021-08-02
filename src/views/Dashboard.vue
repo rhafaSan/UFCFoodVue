@@ -70,8 +70,8 @@
                         </div>
                     </div>
 
-                    <div class="card">
-                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
+                    <div class="card" >
+                        <img class="ilustrator-food" :src="img" alt="Avatar"  style="width:100%">
                         <div class="container-card">
                             <h4><b>salada</b></h4>
                             <p>Salada crua</p>
@@ -79,7 +79,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" src="../assets/Arroz.jpg" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>Fruta</b></h4>
                             <p>Banana</p>
@@ -107,6 +107,9 @@ export default {
           img: hamb,
           
       }
+  },
+  methods:{
+      
   }
 }
 </script>
@@ -190,6 +193,9 @@ export default {
         footer {
             background-color: #0da3e93b;
             height: 5%;
+            text-align: center;
+            font-size: 15px;
+            font-family: sans-serif;
         }
 
         .top-content{
