@@ -22,12 +22,12 @@
 
                 </div>
                 <div class="button-div">
-                   <button type="submit" class="login-btn" @click="watchRegister">Finalizar cadastro</button>
+                   <!-- <button type="submit" class="login-btn" @click="watchRegister">Finalizar cadastro</button> -->
                     <SecundaryButton placeholder="Finalizar cadastro" type="submit" />
                 </div>
             </form>
-        </div>
-    </main>
+    </div>
+</main>
 </template>
 
 <script>
@@ -67,14 +67,14 @@ export default {
 }
 
 .center-div{
-    
+    border: 1px solid #000;
     text-align: center;
     display: flex;
     flex-direction: column;
     background-color: #F7F7F7;
     border-radius: 10px;
     width: 70%;
-    height: 55vh;
+    height: 70vh;
     margin-top: 1%;
     margin-right: auto;
     margin-left: auto;
@@ -108,21 +108,8 @@ export default {
 
 .center-div .form-div label{
     font-weight: 500;
+    font-size: 14px;
     color: #32264D;
-}
-
-.center-div .button-div button{
-    margin-bottom: 2%;
-    background-color: #04D361;
-    color: #fff;
-    border: none;
-    transition: background-color 0.2s;
-}
-
-.center-div .button-div button:hover{
-    background-color: #05be59;
-    color: #fff;
-    cursor: pointer;
 }
 
  .input-div input{
@@ -137,9 +124,11 @@ export default {
 }
 
 .form-div .show-btn{
-    width: 10%;
-    height: 40px;
-    background-color: #d1e751;
+    width: 14%;
+    height: 30px;
+    font-size: 11px;
+    background-color: #10a580;
+    font-weight: 500;
     color: #fff;
     border: none;
     margin-right: auto;
@@ -149,8 +138,8 @@ export default {
 }
 
 .form-div .show-btn:hover{
-    background-color: #a6b64e;
-    color: #fff;
+    background-color: #39cca0;
+    color: #000;
     cursor: pointer;
 }
 </style>

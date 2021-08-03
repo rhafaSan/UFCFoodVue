@@ -25,15 +25,17 @@ export default {
   button{
     border: none;
     background-color: #04D361;
+    color: #000;
     width: 150px;
     height: 35px;
     border-radius: 10px;
-    font-weight: 700;
+    font-weight: 600;
     transition: background-color 0.2s;
   }
 
   button:hover{
     cursor: pointer;
     background-color: #04BF58;
+    color: #fff;
   }
 </style>

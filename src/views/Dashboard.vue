@@ -9,18 +9,9 @@
         <div class="container">
             <div class="sidebar-menu">
                 <div class="bar-block">
-                    <a href="/dashboard" class="button">
-                        <p>Início</p>
-                    </a>
-                    <a href="/rating" class="button">
-                        <p>Avaliações</p>
-                    </a>
-                    <a href="#" class="button">
-                        <p>Cadastros</p>
-                    </a>
-                    <a href="#" class="button">
-                        <p>Configurações</p>
-                    </a>
+                    <router-link to="/dashboard" class="link">Ínicio</router-link>
+                    <router-link to="/rating" class="link">Avaliações</router-link>
+                    <router-link to="#" class="link">Cadastrar</router-link>
                 </div>
             </div>
             <div class="content">
@@ -90,18 +81,17 @@
                 <div class="down-content"></div>
             </div>
         </div>
-
-        <footer class="container-fluid text-center">
-            <p>Plataforma desenvolvida para disciplina de WEB</p>
-            <p>Direitos reservados</p>
-        </footer>
+        <Footer />
 </template>
 
 <script>
 const hamb = require('../assets/hamburguer-de-lentilha.jpg')
-
+import Footer from '@/components/Footer.vue'
 export default {
   name: 'Dashboard',
+  components: {
+      Footer
+  },
   data(){
       return{
           img: hamb,
@@ -115,9 +105,14 @@ export default {
 </script>
 
 <style scoped>
- .main {
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main {
             width: 100%;
-            height: 100vh;
+            height: 100%;
 
         }
 
@@ -146,8 +141,18 @@ export default {
             padding: 15px;
             display: flex;
             flex-direction: column;
+        }
 
-
+        .link{
+            text-decoration: none;
+            background-color:#ffffff;
+            border-radius: 3px;
+            margin-bottom: 3%;
+            color: rgb(19, 34, 170);
+        }
+        .link:hover{
+            color: rgb(19, 34, 170);
+            background-color: rgba(149, 161, 168, 0);
         }
 
         .sidebar-menu .bar-block {
@@ -190,13 +195,7 @@ export default {
             height: 100%;
         }
 
-        footer {
-            background-color: #0da3e93b;
-            height: 5%;
-            text-align: center;
-            font-size: 15px;
-            font-family: sans-serif;
-        }
+        
 
         .top-content{
             height: 50%;
@@ -215,6 +214,7 @@ export default {
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            width: 100%;
         }
 
         .card {
@@ -222,6 +222,15 @@ export default {
             transition: 0.3s;
             width: 12%;
             margin-right: 2%;
+            text-overflow: ellipsis;
+        }
+
+        .card h4{
+            font-size: 1vw;
+        }
+
+        .card p{
+            font-size: 12px;
         }
 
         .heading-card{
@@ -234,7 +243,7 @@ export default {
         }
 
         .ilustrator-food{
-            height: 300px;
+            height: 150px;
         }
 
         .container-card {

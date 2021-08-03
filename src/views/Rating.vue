@@ -62,30 +62,33 @@ export default {
 </script>
 
 <style scoped>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .main-body{
-    width: 70%;
-    height: 500px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 10px;
-    background-color: #049c48;
+    widows: 100%;
+    height: 100%;
 }
 
 .main-body .center-div{
     background-color: #F7F7F7;
-    margin-top: 100px;
+    border: 1px solid #000;
+    width: 75%;
+    height: 75%;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    margin-top: 15%;
+    margin: 8% auto auto auto;
     text-align: center;
-    /*border: 1px solid rgba(158, 34, 158, 0.6);*/
 }
 
 .main-body .center-div p{
     font-size: 20px;
     font-weight: 600;
+    color: #323751;
 }
 
 .main-body .center-div span{
@@ -100,23 +103,30 @@ export default {
     flex-direction: column;
 }
 
-.main-body .center-div .form-div select{
+ select{
     width: 52%;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 2%;
+    border-radius: 10px;
 }
 
-.main-body .center-div .form-div input{
-    width: 50%;
+select, input:focus{
+    outline: none;
+}
+
+input{
+    width: 52%;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 2%;
+    border-radius: 10px;
+    border: 1px solid #c7c7c7;
 }
 
 .main-body .center-div .form-div label{
     font-weight: 500;
-    /*color: rgb(148, 26, 148)*/
+    color: #323751;
 }
 
 .main-body .center-div .button-div button{

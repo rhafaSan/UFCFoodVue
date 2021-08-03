@@ -11,18 +11,27 @@
                     <input type="password" name="password" id="password" required>
                 </div>
                 <div class="button-div">
-                    <button type="submit" class="login-btn" @click="validateLogin">Entrar</button>
-                    <button class="register-btn" @click="goToRegister ">Cadastrar</button>
-                    
+                    <!-- <button type="submit" class="login-btn" @click="validateLogin">Entrar</button>
+                    <button class="register-btn" @click="goToRegister ">Cadastrar</button>-->
+                    <PrimaryButton placeholder="Entrar"  />
+
+                    <SecundaryButton placeholder="Cadastrar" />
                 </div>
             </form>
         </div>
      </main>
 </template>
 
-<script scoped>
+<script >
+import PrimaryButton from '@/components/PrimaryButton.vue';
+import SecundaryButton from '@/components/SecundaryButton.vue';
+
 export default {
   name: 'Login',
+  components: {
+      PrimaryButton,
+      SecundaryButton
+  },
   methods: {
     goToRegister(){
       this.$router.push('/register')
@@ -46,7 +55,7 @@ export default {
     border: 1px solid rgba(117, 112, 112, 0.39); 
     border-radius: 10px;
     width: 70%;
-    height: 40vh;
+    height: 50vh;
     margin-top: 1%;
     margin-right: auto;
     margin-left: auto;
