@@ -4,7 +4,7 @@
             <p>Bem vindo (a) ao UFC Food</p>
             <form action="" name="login_form">
                 <div class="form-div">
-                    <label for="username">Nome de usuário:</label>
+                    <label for="username">Matrícula/CRO:</label>
                     <input type="text" name="username" id="username" v-model="matricula" required>
                     
 
@@ -67,7 +67,7 @@ p, label{
 }
 .center-div{
     background-color: #F7F7F7;
-    border: 1px solid rgba(117, 112, 112, 0.39); 
+    border: 1px solid #c7c7c7; 
     border-radius: 10px;
     width: 70%;
     height: 50vh;
@@ -85,8 +85,6 @@ p, label{
 }
 
 .center-div .form-div{
-    /* border: 1px solid #000; */
-    /* background-color: #EDF2F4; */
     display: flex;
     flex-direction: column;
     padding: 1%;
@@ -100,6 +98,7 @@ p, label{
     height: 20px;
     border-radius: 8px;
     border: 1px solid #c7c7c7;
+    padding-left: 1%;
 }
 
 input:focus{

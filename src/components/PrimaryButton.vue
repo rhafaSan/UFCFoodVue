@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   button{
     border: none;
     background-color: #04D361;
@@ -30,6 +30,7 @@ export default {
     height: 35px;
     border-radius: 10px;
     font-weight: 600;
+    font-family: Roboto;
     transition: background-color 0.2s;
   }
 

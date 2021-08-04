@@ -75,7 +75,7 @@ export default {
 
 .main-body .center-div{
     background-color: #F7F7F7;
-    border: 1px solid #000;
+    border: 1px solid #c7c7c7;
     width: 75%;
     height: 75%;
     display: flex;
@@ -109,6 +109,8 @@ export default {
     margin-left: auto;
     margin-bottom: 2%;
     border-radius: 10px;
+    border: 1px solid #c7c7c7;
+    padding-left: 1%;
 }
 
 select, input:focus{
@@ -122,6 +124,7 @@ input{
     margin-bottom: 2%;
     border-radius: 10px;
     border: 1px solid #c7c7c7;
+    padding-left:1% ;
 }
 
 .main-body .center-div .form-div label{

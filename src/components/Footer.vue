@@ -13,11 +13,12 @@ export default {
 
 <style>
 footer{
-    background-color: #0da3e93b;
+    background-color: #d42121ee;
+    color: #f7f7f7;
     height: 15vh;
     text-align: center;
     font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Roboto;
     display: flex;
     flex-direction: column;
     

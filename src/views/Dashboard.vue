@@ -2,11 +2,7 @@
 <div class="all-body">
 
         <header class="nav-header">
-            <div class="logo">
-                <h1>UFCFood</h1>
-            </div>
-            <div class="nav-bar">
-            </div>
+            <Header />
         </header>
         <main class="container">
             <div class="sidebar-menu">
@@ -18,9 +14,6 @@
             </div>
             <div class="content">
                 <div class="top-content">
-                   <div class="heading-card">
-                   <h1> Cardápio do Dia!</h1>
-                   </div>
                    <div class="card-container">
                        
                     <div class="card">
@@ -89,11 +82,13 @@
 
 <script>
 const hamb = require('../assets/hamburguer-de-lentilha.jpg')
-import Footer from '@/components/Footer.vue'
+import Footer from '@/components/Footer.vue';
+import Header from '@/components/Header.vue'
 export default {
   name: 'Dashboard',
   components: {
-      Footer
+      Footer,
+      Header
   },
   data(){
       return{
@@ -120,7 +115,7 @@ export default {
         }
 
         .nav-header {
-            background-color: #0da3e93b;
+            background-color: #d42121ee;
             height: 7%;
         }
 
@@ -230,10 +225,14 @@ export default {
 
         .card h4{
             font-size: 1vw;
+            font-family: Roboto;
+            font-weight: 700;
         }
 
         .card p{
-            font-size: 12px;
+            font-size: 1vw;
+            font-family: Roboto;
+            font-weight: 500;
         }
 
         .heading-card{
