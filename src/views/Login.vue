@@ -5,17 +5,18 @@
             <form action="" name="login_form">
                 <div class="form-div">
                     <label for="username">Nome de usuário:</label>
-                    <input type="text" name="username" id="username" required>
+                    <input type="text" name="username" id="username" v-model="matricula" required>
+                    
 
                     <label for="password">Senha:</label>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="password" v-model="password" required>
                 </div>
                 <div class="button-div">
                     <!-- <button type="submit" class="login-btn" @click="validateLogin">Entrar</button>
-                    <button class="register-btn" @click="goToRegister ">Cadastrar</button>-->
-                    <PrimaryButton placeholder="Entrar"  />
+                    <button class="register-btn" @click="goToRegister ">Cadastrar</button> -->
+                    <PrimaryButton placeholder="Entrar" type="button" @action="validateLogin" />
 
-                    <SecundaryButton placeholder="Cadastrar" />
+                    <SecundaryButton placeholder="Cadastrar" @action="goToRegister" />
                 </div>
             </form>
         </div>
@@ -26,11 +27,19 @@
 import PrimaryButton from '@/components/PrimaryButton.vue';
 import SecundaryButton from '@/components/SecundaryButton.vue';
 
+
 export default {
   name: 'Login',
+  data(){
+      return{
+          matricula: "",
+          password: ""
+      }
+  },
   components: {
       PrimaryButton,
-      SecundaryButton
+      SecundaryButton,
+      
   },
   methods: {
     goToRegister(){
@@ -38,11 +47,17 @@ export default {
     },
     validateLogin(){
       this.$router.push('/dashboard')
+    
     }
   }
 }
 </script>
 <style scoped>
+
+p, label{
+    font-family: Roboto;
+}
+
 
 .main-body{
     background-color: #0da3e93b;
@@ -83,6 +98,12 @@ export default {
 .center-div .form-div input{
     width: 90%;
     height: 20px;
+    border-radius: 8px;
+    border: 1px solid #c7c7c7;
+}
+
+input:focus{
+    outline: none;
 }
 
 .center-div .form-div input, label{

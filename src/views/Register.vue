@@ -3,10 +3,10 @@
   <div class="center-div">
             <p>Bem vindo (a) ao UFC Food</p>
             <span>Cadastre-se gratuitamente</span>
-            <form action="" name="register_form">
+            <form action="" name="register_form" @submit="watchRegister">
                 <div class="form-div">
                     <label for="username">Nome de usuário:</label>
-                    <input type="text" name="username" id="username" minlength="4" required oninvalid="this.setCustomValidity('Nome de usuário menor que o permitido')">
+                    <input type="text" name="username" id="username" required >
 
                     <label for="password">Senha:</label>
                     <div class="input-div">
@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     watchRegister(){
-      this.$router.push('/login');
+      this.$router.push('/');
     },
     showPassword(){
         this.pswd == 'password' ? this.pswd = 'text' : this.pswd = 'password'
@@ -60,6 +60,9 @@ export default {
 </script>
 
 <style scoped>
+p,label{
+    font-family: Roboto;
+}
 .main-body{
     background-color: #0da3e93b;
     height: 100vh;
@@ -67,7 +70,7 @@ export default {
 }
 
 .center-div{
-    border: 1px solid #000;
+    border: 1px solid #f7f7f7;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -101,21 +104,21 @@ export default {
 
 .center-div .form-div input{
     width: 50%;
+    height: 25px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 2%;
+    border: 1px solid #c7c7c7;
+    border-radius: 8px;
+}
+input:focus{
+    outline: none;
 }
 
 .center-div .form-div label{
     font-weight: 500;
     font-size: 14px;
     color: #32264D;
-}
-
- .input-div input{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
 }
 
 .input-div{
