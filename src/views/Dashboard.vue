@@ -1,12 +1,14 @@
 <template>
-  <div class="nav-header">
+<div class="all-body">
+
+        <header class="nav-header">
             <div class="logo">
                 <h1>UFCFood</h1>
             </div>
             <div class="nav-bar">
             </div>
-        </div>
-        <div class="container">
+        </header>
+        <main class="container">
             <div class="sidebar-menu">
                 <div class="bar-block">
                     <router-link to="/dashboard" class="link">Ínicio</router-link>
@@ -80,8 +82,9 @@
                 </div>
                 <div class="down-content"></div>
             </div>
-        </div>
+        </main>
         <Footer />
+</div>
 </template>
 
 <script>
@@ -110,9 +113,9 @@ export default {
             padding: 0;
             box-sizing: border-box;
         }
-        .main {
+        .all-body {
             width: 100%;
-            height: 100%;
+            height: 100vh;
 
         }
 

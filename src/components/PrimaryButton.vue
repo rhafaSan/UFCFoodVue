@@ -1,6 +1,6 @@
 <template>
 <div>
-  <button type="{{ btnType }}">{{ placeholder }}</button>
+  <button type="{{ btnType }}" @click="$emit('action')">{{ placeholder }}</button>
 </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
       required: true
     }
   },
-  // emits: ['action']
+  emits: ['action']
 }
 </script>
 
