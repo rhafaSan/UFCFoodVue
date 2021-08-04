@@ -17,7 +17,7 @@
                    <div class="card-container">
                        
                     <div class="card">
-                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" src="../assets/hamburguer-de-lentilha.jpg" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>Opção vegetariana</b></h4>
                             <p>hamburguer-de-lentilha</p>
@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" src="../assets/FrangoEmpanado.jpg" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>Opção Onívoro</b></h4>
                             <p>Frango a passarinho</p>
@@ -33,7 +33,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" src="../assets/carneVermelha.jpg" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>Opção Onívoro</b></h4>
                             <p>Picadinho de carne</p>
@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" src="../assets/Arroz.jpg" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>Acompanhamento</b></h4>
                             <p>Arroz branco</p>
@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="ilustrator-food" :src="img" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" src="../assets/Feijao.jpg" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>Acompanhamento</b></h4>
                             <p>Feijão mulatinho</p>
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="card" >
-                        <img class="ilustrator-food" :src="img" alt="Avatar"  style="width:100%">
+                        <img class="ilustrator-food" src="../assets/salada.jpg" alt="Avatar"  style="width:100%">
                         <div class="container-card">
                             <h4><b>salada</b></h4>
                             <p>Salada crua</p>
@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="ilustrator-food" src="../assets/Arroz.jpg" alt="Avatar" style="width:100%">
+                        <img class="ilustrator-food" src="../assets/fruta.jpg" alt="Avatar" style="width:100%">
                         <div class="container-card">
                             <h4><b>Fruta</b></h4>
                             <p>Banana</p>
@@ -73,6 +73,8 @@
                     </div>
                    </div>
                 </div>
+                <br>
+                <h3><p> Selecione uma opção acima para ver detalhes do menu !</p></h3>
                 <div class="down-content"></div>
             </div>
         </main>
@@ -81,7 +83,6 @@
 </template>
 
 <script>
-const hamb = require('../assets/hamburguer-de-lentilha.jpg')
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue'
 export default {
@@ -91,9 +92,7 @@ export default {
       Header
   },
   data(){
-      return{
-          img: hamb,
-          
+      return{ 
       }
   },
   methods:{
@@ -115,7 +114,7 @@ export default {
         }
 
         .nav-header {
-            background-color: #d42121ee;
+            background-color: #0da3e93b;
             height: 7%;
         }
 
@@ -217,7 +216,7 @@ export default {
 
         .card {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
+            transition: 0.4s;
             width: 12%;
             margin-right: 2%;
             text-overflow: ellipsis;
@@ -250,5 +249,8 @@ export default {
 
         .container-card {
             padding: 2px 16px;
+        }
+        h3{
+            text-align: center;
         }
 </style>

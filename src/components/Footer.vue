@@ -13,8 +13,8 @@ export default {
 
 <style>
 footer{
-    background-color: #d42121ee;
-    color: #f7f7f7;
+    background-color: #0da3e93b;
+    color: #080808;
     height: 15vh;
     text-align: center;
     font-size: 12px;

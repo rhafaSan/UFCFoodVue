@@ -69,19 +69,20 @@ export default {
 }
 
 .main-body{
-    widows: 100%;
-    height: 100%;
+     background-color: #0da3e93b;
+    height: 100vh;
+    padding-top: 10%;
 }
 
 .main-body .center-div{
     background-color: #F7F7F7;
     border: 1px solid #c7c7c7;
     width: 75%;
-    height: 75%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    margin: 8% auto auto auto;
+    margin:  auto auto auto;
     text-align: center;
 }
 

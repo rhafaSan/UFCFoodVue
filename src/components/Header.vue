@@ -28,7 +28,7 @@ export default {
     }
 
     .logo p{
-        color: #fff;
+        color: #080808;
         font-size: 16px;
         margin: auto;
         font-family: Roboto;
