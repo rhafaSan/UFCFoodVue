@@ -5,12 +5,48 @@
             <span>Cadastre-se gratuitamente</span>
             <form action="" name="register_form" @submit="watchRegister">
                 <div class="form-div">
-                    <label for="username">Nome de usuário:</label>
-                    <input type="text" name="username" id="username" required >
+                    <div class="opt-div">
+                        <div class="options">
+                            <input type="radio" name="type" id="nutri" value="Nutricionista" v-model="TypeUser">
+                            <input type="radio" name="type" id="nutri" value="Aluno" v-model="TypeUser">
+                        </div>
+                        <div class="labels">
+                            <label for="type">Nutricionista</label>
+                            <label for="type">Aluno</label>
+                        </div>
+                    </div>
+                    <div v-if="TypeUser === 'Nutricionista'" class="identification">
+                        <label for="username" >CRO:</label>
+                        <input type="text" name="username" id="username" v-model="cro" required >
+
+                    </div>
+                    <div v-if="TypeUser === 'Aluno'" class="identification">
+                        <label for="username" >Matrícula:</label>
+                        <input type="text" name="username" id="username" v-model="registration" required >
+
+                    </div>
+                    <select v-model="SexUser">
+                        <option disabled value="">Sexo</option>
+                        <option >Masculino</option>
+                        <option >Feminino</option>
+                        <option >Outro</option>
+                    </select>
+
+                    <select v-model="CourseUser">
+                        <option disabled value="">Curso</option>
+                        <option >CC</option>
+                        <option >SI</option>
+                        <option >Eng.Minas</option>
+                        <option >Eng.Civil</option>
+                        <option >Eng.Ambiental</option>
+                    </select>
+
+                    <label for="">Apelido:</label>
+                    <input type="text" name="" id="" v-model="username" required>
 
                     <label for="password">Senha:</label>
                     <div class="input-div">
-                        <input :type="pswd" name="password" id="password" minlength="6" maxlength="12" required> 
+                        <input :type="pswd" name="password" id="password" v-model="password" minlength="6" maxlength="12" required> 
                         <button class="show-btn" @click="showPassword" type="button" >Mostrar senha</button>
                     </div>
                     
@@ -33,40 +69,68 @@
 <script>
 import SecundaryButton from '@/components/SecundaryButton.vue';
 
+import api from '@/services/api.js';
+
 export default {
   name: 'Register',
   data(){
       return{
-          pswd: 'password',
-          confirmPswd :'password'
+        pswd: 'password',
+        confirmPswd :'password',
+        password: null,
+        CourseUser: null,
+        SexUser: null,
+        TypeUser: null,
+        cro: null,
+        registration: null,
+        username: null
       }
   },
   components:{
       SecundaryButton
   },
   methods: {
-    watchRegister(){
-      this.$router.push('/');
+    watchRegister(e){
+    e.preventDefault();
+    this.createUser();
     },
     showPassword(){
         this.pswd == 'password' ? this.pswd = 'text' : this.pswd = 'password'
     },
     showConfirmePassword(){
         this.confirmPswd == 'password' ? this.confirmPswd = 'text' : this.confirmPswd = 'password'
-    }
+    },
 
+    async createUser(){
+        const data = {
+            username: this.username,
+            password: this.pswd,
+            cro: this.cro,
+            registration: this.registration,
+            sex: this.SexUser,
+            course: this.CourseUser,
+            typeUser: this.TypeUser
+        }
+        const res = await api.post('/', data );
+        if(res.status === 200){
+            console.log(res.data)
+            this.$router.push('/');
+
+        }
+    }
   }
 }
 </script>
 
 <style scoped>
-p,label{
+p,label, span{
     font-family: Roboto;
 }
 .main-body{
     background-color: #0da3e93b;
     height: 100vh;
-    padding-top: 10%;
+    padding: 10%;
+    margin: auto;
 }
 
 .center-div{
@@ -76,13 +140,27 @@ p,label{
     flex-direction: column;
     background-color: #F7F7F7;
     border-radius: 10px;
-    width: 70%;
+    width: 80%;
     height: 70vh;
-    margin-top: 1%;
-    margin-right: auto;
-    margin-left: auto;
+    margin: auto;
     padding: 2%;
     color: #333;
+}
+
+.identification{
+    display: flex;
+    flex-direction: column;
+}
+
+.opt-div{
+    width:50%;
+    margin: auto;
+}
+
+.opt-div .labels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .center-div p{
@@ -112,6 +190,21 @@ p,label{
     border-radius: 8px;
 }
 input:focus{
+    outline: none;
+}
+
+select{
+    width: 50%;
+    height: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 2%;
+    border: 1px solid #c7c7c7;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+select:focus{
     outline: none;
 }
 

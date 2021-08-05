@@ -2,19 +2,36 @@
 <main class="main-body">
   <div class="center-div">
             <p>Bem vindo (a) ao UFC Food</p>
-            <form action="" name="login_form">
+            <form action="" name="login_form" @submit="validateLogin">
                 <div class="form-div">
-                    <label for="username">Matrícula/CRO:</label>
-                    <input type="text" name="username" id="username" v-model="matricula" required>
-                    
+                    <div class="opt-div">
+                        <div class="options">
+                            <input type="radio" name="type" id="nutri" value="Nutricionista" v-model="TypeUser">
+                            <input type="radio" name="type" id="nutri" value="Aluno" v-model="TypeUser">
+                        </div>
+                        <div class="labels">
+                            <label for="type">Nutricionista</label>
+                            <label for="type">Aluno</label>
+                        </div>
+                    </div>
+                    <div v-if="TypeUser === 'Nutricionista'" class="identification">
+                        <label for="username" >CRO:</label>
+                        <input type="text" name="username" id="username" v-model="cro" required >
+
+                    </div>
+                    <div v-if="TypeUser === 'Aluno'" class="identification">
+                        <label for="username" >Matrícula:</label>
+                        <input type="text" name="username" id="username" v-model="registration" required >
+
+                    </div>
 
                     <label for="password">Senha:</label>
                     <input type="password" name="password" id="password" v-model="password" required>
                 </div>
                 <div class="button-div">
-                    <!-- <button type="submit" class="login-btn" @click="validateLogin">Entrar</button>
-                    <button class="register-btn" @click="goToRegister ">Cadastrar</button> -->
-                    <PrimaryButton placeholder="Entrar" type="button" @action="validateLogin" />
+                    <!-- <button type="submit" class="login-btn" @click="validateLogin">Entrar</button> -->
+                    <!-- <button class="register-btn" @click="goToRegister ">Cadastrar</button> -->
+                    <PrimaryButton placeholder="Entrar" type="button" />
 
                     <SecundaryButton placeholder="Cadastrar" @action="goToRegister" />
                 </div>
@@ -26,14 +43,17 @@
 <script >
 import PrimaryButton from '@/components/PrimaryButton.vue';
 import SecundaryButton from '@/components/SecundaryButton.vue';
+import api from '@/services/api.js'
 
 
 export default {
   name: 'Login',
   data(){
       return{
-          matricula: "",
-          password: ""
+          registration: "",
+          cro: "",
+          password: "",
+          TypeUser: null
       }
   },
   components: {
@@ -45,9 +65,23 @@ export default {
     goToRegister(){
       this.$router.push('/register')
     },
-    validateLogin(){
-      this.$router.push('/dashboard')
-    
+    validateLogin(e){
+        e.preventDefault();
+        this.login();
+    //   
+    console.log(`Matrícula: ${this.registration} || CRO: ${this.cro} || Senha: ${this.password}`)
+    },
+    async login(){
+        const data = {
+            registration: this.registration,
+            password: this.password,
+            cro: this.cro
+        }
+        const res = await api.post('/login',data);
+        if(res.status === 200){
+            console.log(res.data);
+            this.$router.push('/dashboard')
+        }
     }
   }
 }
@@ -77,6 +111,26 @@ p, label{
     padding: 2%;
     color: #333;
 }
+.identification{
+    display: flex;
+    flex-direction: column;
+}
+
+.opt-div{
+    width:60%;
+    height: 10vh;
+    margin: auto;
+}
+
+.opt-div .options{
+    display: flex;
+}
+
+.opt-div .labels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
 .center-div p{
     text-align: center;
@@ -100,6 +154,7 @@ p, label{
     border: 1px solid #c7c7c7;
     padding-left: 1%;
 }
+
 
 input:focus{
     outline: none;
