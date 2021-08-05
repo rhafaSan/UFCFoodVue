@@ -77,11 +77,20 @@ export default {
             password: this.password,
             cro: this.cro
         }
+        
         const res = await api.post('/login',data);
-        if(res.status === 200){
-            console.log(res.data);
-            this.$router.push('/dashboard')
+        if(res.data.user ){
+            // console.log(res.data);
+            this.$router.push('/dashboard');
+        }else if(res.data.message === 'Usuário não existe'){
+            alert(res.data.message)
+        }else if( res.data.message === 'Login incorreto'){
+            alert(res.data.message)
         }
+
+        
+        // if(res.status === 200){
+        // }
     }
   }
 }

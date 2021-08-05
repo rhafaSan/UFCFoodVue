@@ -10,29 +10,49 @@
                   <div class="card">
                     <img class="ilustrator-food" src="../assets/hamburguer-de-lentilha.jpg" alt="Avatar">
                         <div class="container-card">
-                            <h4><b>Opção vegetariana</b></h4>
-                            <p>hamburguer-de-lentilha</p>
+                            <h4><b>{{options.type_option}}</b></h4>
+                            <p>{{options.option_name}}</p>
                         </div>
                     </div>
                     <div class="text">
                         <div class="container-card">
-                            <h4><b>Opção vegetariana: Hamburguer-de-lentilha</b></h4>
-                            <p>Se você ainda acha que hambúrguer precisa levar carne, 
-                              <p> você vai se surpreender com essa versão Plant Based. </p>
+                            <h4><b>{{options.type_option}}:  {{options.option_name}}</b></h4>
+                            <p>{{ options.description }}</p>
+                              
                               
                               <h4><p> Tabela nutricional. </p></h4>
                               <p>  QUANTIDADE POR PORÇÃO 120 G	Qtd.	%vd(*) </p>
-                              <p>  Valor Energético	261 Kcal = 1092 KJ	13 </p>
-                              <p>   Carboidratos	37g	12 </p>
-                              <p>  Proteínas	25g	33 </p>
-                              <p>   Gorduras Totais	2g	4</p>
+                              <p>  Valor Energético	{{options.energetic_value}} Kcal</p>
+                              <p>   Carboidratos	{{options.carbohydrate}}g </p>
+                              <p>  Proteínas	{{options.protein}}g	 </p>
+                              <p>   Gorduras Totais	{{options.total_fat}}g</p>
                         </div>
                     </div>
              </div>
     </main>
 </template>
 <script>
-
+import api from '@/services/api.js';
+export default{
+    name: 'ShowSelected',
+    data(){
+        return{
+            id: this.$route.params.id,
+            options: []
+            
+        }
+    },
+    methods: {
+        async getOption(){
+            const res = await api.get(`/option/${this.id}`);
+            console.log(res.data.Option[0].option_name);
+            this.options = res.data.Option[0];
+        }
+    },
+    mounted(){
+        this.getOption();
+    }
+}
 </script>
 <style scoped>
  .logo{

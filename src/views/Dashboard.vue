@@ -9,68 +9,22 @@
                 <div class="bar-block">
                     <router-link to="/dashboard" class="link">Ínicio</router-link>
                     <router-link to="/rating" class="link">Avaliações</router-link>
-                    <router-link to="#" class="link">Cadastrar</router-link>
+                    <router-link to="/register-food" class="link">Cadastrar</router-link>
                 </div>
             </div>
             <div class="content">
                 <div class="top-content">
                    <div class="card-container">
                        
-                    <div class="card">
-                        <img class="ilustrator-food" src="../assets/hamburguer-de-lentilha.jpg" alt="Avatar" style="width:100%">
+                    <div class="card" v-for="opt of options" :key="opt.id" @click="goSelected(opt.id)" >
+                        <img class="ilustrator-food" :src="opt.image_food" alt="Avatar" style="width:100%">
                         <div class="container-card">
-                            <h4><b>Opção vegetariana</b></h4>
-                            <p>hamburguer-de-lentilha</p>
+                            <h4><b>{{ opt.type_option }}</b></h4>
+                            <p>{{opt.option_name}}</p>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <img class="ilustrator-food" src="../assets/FrangoEmpanado.jpg" alt="Avatar" style="width:100%">
-                        <div class="container-card">
-                            <h4><b>Opção Onívoro</b></h4>
-                            <p>Frango a passarinho</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <img class="ilustrator-food" src="../assets/carneVermelha.jpg" alt="Avatar" style="width:100%">
-                        <div class="container-card">
-                            <h4><b>Opção Onívoro</b></h4>
-                            <p>Picadinho de carne</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <img class="ilustrator-food" src="../assets/Arroz.jpg" alt="Avatar" style="width:100%">
-                        <div class="container-card">
-                            <h4><b>Acompanhamento</b></h4>
-                            <p>Arroz branco</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <img class="ilustrator-food" src="../assets/Feijao.jpg" alt="Avatar" style="width:100%">
-                        <div class="container-card">
-                            <h4><b>Acompanhamento</b></h4>
-                            <p>Feijão mulatinho</p>
-                        </div>
-                    </div>
-
-                    <div class="card" >
-                        <img class="ilustrator-food" src="../assets/salada.jpg" alt="Avatar"  style="width:100%">
-                        <div class="container-card">
-                            <h4><b>salada</b></h4>
-                            <p>Salada crua</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <img class="ilustrator-food" src="../assets/fruta.jpg" alt="Avatar" style="width:100%">
-                        <div class="container-card">
-                            <h4><b>Fruta</b></h4>
-                            <p>Banana</p>
-                        </div>
-                    </div>
+                    
                    </div>
                 </div>
                 <br>
@@ -84,7 +38,9 @@
 
 <script>
 import Footer from '@/components/Footer.vue';
-import Header from '@/components/Header.vue'
+import Header from '@/components/Header.vue';
+import api from '@/services/api.js';
+
 export default {
   name: 'Dashboard',
   components: {
@@ -93,10 +49,21 @@ export default {
   },
   data(){
       return{ 
+          options: []
       }
   },
   methods:{
-      
+      async getFoods(){
+          const res = await api.get('/menu/');
+          console.log(res.data.Menu);
+          this.options = res.data.Menu;
+      },
+      goSelected(id){
+          this.$router.push(`/food/${id}`)
+      }
+  },
+  mounted(){
+      this.getFoods();
   }
 }
 </script>
